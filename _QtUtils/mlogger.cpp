@@ -38,7 +38,7 @@ void MLogger::openLogFile(const QString &date)
                 logFile.close();
     }
 
-    QString logDirPath = "./logs";
+    QString logDirPath = "./../logs";
     QDir logDir;
     if (!logDir.exists(logDirPath)) {
         logDir.mkpath(logDirPath);
@@ -73,7 +73,4 @@ QString MLogger::formatLogMessage(MLogger::LogLevel level, const QString &messag
     return logMessage;
 }
 
-#define LOG_DEBUG(message) MLogger::instance().printLog(MLogger::DEBUG, message, __FILE__, __LINE__)
-#define LOG_INFO(message) MLogger::instance().printLog(MLogger::INFO, message, __FILE__, __LINE__)
-#define LOG_WARNING(message) MLogger::instance().printLog(MLogger::WARNING, message, __FILE__, __LINE__)
-#define LOG_ERROR(message) MLogger::instance().printLog(MLogger::ERROR, message, __FILE__, __LINE__)
+
